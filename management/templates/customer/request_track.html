@@ -1,0 +1,21 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+<h2>My Service Requests</h2>
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Submitted At</th>
+        <th>Updated At</th>
+    </tr>
+    {% for request in requests %}
+    <tr>
+        <td>{{ request.get_request_type_display }}</td>
+        <td>{{ request.get_status_display }}</td>
+        <td>{{ request.created_at }}</td>
+        <td>{{ request.updated_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
